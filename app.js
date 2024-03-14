@@ -6,6 +6,7 @@ require("dotenv").config();
 const app = express();
 
 const authRoutes = require("./routes/auth");
+const postRoutes = require('./routes/post')
 
 
 const PORT = process.env.PORT || 3000;
@@ -14,6 +15,7 @@ const { MONGODB_URI } = process.env;
 app.use(bodyParser.json());
 
 app.use("/auth", authRoutes);
+app.use("/post",postRoutes);
 
 
 mongoose
